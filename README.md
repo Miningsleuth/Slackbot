@@ -5,5 +5,6 @@ My simple Slackbot helper
 - /helper-ping
 - /helper-help
 - /helper-catfact
+- /helper-joke
 
 ## Attribution
