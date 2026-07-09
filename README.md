@@ -8,10 +8,15 @@ My simple Slackbot helper
 - /helper-help
 - /helper-catfact
 - /helper-joke
+- /helper-fact
 
 ## Attribution
 - Assistance from Stardance Guide
 - Nest Hackclub Hosting
+### APIs
+- https://catfact.ninja/fact
+- https://official-joke-api.appspot.com/random_joke
+- https://uselessfacts.jsph.pl/api/v2/facts/random?language=en
 
 Made for a mission in Stardance
 Made by Charlie
