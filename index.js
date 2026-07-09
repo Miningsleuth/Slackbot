@@ -54,6 +54,20 @@ ${response.data.punchline}`
   }
 });
 
+app.command("/helper-fact", async ({ ack, respond }) => {
+  await ack();
+
+  try {
+    const response = await axios.get("https://uselessfacts.jsph.pl/api/v2/facts/random?language=en");
+    await respond({
+      text:
+`${response.data.text}`
+    });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a fact." });
+  }
+});
+
 (async () => {
   await app.start();
   console.log("bot is running!");
