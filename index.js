@@ -23,7 +23,7 @@ app.command("/helper-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
   await ack();
   const latency = Date.now() - start;
-  await respond({ text: `Pong!\nLatency: ${latency}ms` });
+  await respond({ text: `Pong!\nLatency: ${latency}ms\nWhoa! Nice, a ping!` });
 });
 
 app.command("/helper-help", async ({ ack, respond }) => {
@@ -34,7 +34,8 @@ app.command("/helper-help", async ({ ack, respond }) => {
 /helper-ping - Check bot latency
 /helper-help - Get this message
 /helper-catfact - Get a cat fact
-/helper-joke - Get a joke`
+/helper-joke - Get a joke
+/helper-fact - Get a general fact`
   });
 });
 
@@ -50,7 +51,7 @@ app.command("/helper-joke", async ({ ack, respond }) => {
 ${response.data.punchline}`
     });
   } catch (err) {
-    await respond({ text: "Failed to fetch a joke." });
+    await respond({ text: "Failed to fetch a joke :(" });
   }
 });
 
@@ -64,11 +65,11 @@ app.command("/helper-fact", async ({ ack, respond }) => {
 `${response.data.text}`
     });
   } catch (err) {
-    await respond({ text: "Failed to fetch a fact." });
+    await respond({ text: "Failed to fetch a fact :(" });
   }
 });
 
 (async () => {
   await app.start();
-  console.log("bot is running!");
+  console.log("I am running!");
 })();
